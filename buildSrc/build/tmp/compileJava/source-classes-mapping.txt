@@ -1,0 +1,11 @@
+ClassHack.java
+ ClassHack
+com/rzm/hack/HackExtension.java
+ com.rzm.hack.HackExtension
+com/rzm/hack/Utils.java
+ com.rzm.hack.Utils
+com/rzm/hack/HackPlugin.java
+ com.rzm.hack.HackPlugin
+ com.rzm.hack.HackPlugin$1
+ com.rzm.hack.HackPlugin$1$1
+ com.rzm.hack.HackPlugin$1$1$1

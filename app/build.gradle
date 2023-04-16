@@ -1,0 +1,39 @@
+apply plugin: 'com.android.application'
+//直接引用类，不需要加''
+//apply plugin: com.rzm.hack.RzmClassHack
+
+//当配置了resources/META-INF/gradle-plugins/com.rzm.hack.properties文件时，引用插件的方式
+//当执行到这一行时，就会调用到插件中的apply方法
+apply plugin:'com.rzm.hack'
+
+//buildSrc下的类，在这里可调用
+new ClassHack().test("app")
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.rzm.usingofgradleplugin"
+        minSdkVersion 16
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+hack {
+    debugOpen = true
+}
+
+dependencies {
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+}
